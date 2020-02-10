@@ -1,29 +1,18 @@
-<!DOCTYPE html>
-
-<html lang="en">
-    {% load static %}
-<head>
-    <link rel='stylesheet' type="text/css" media="screen" href="{% static 'css/aboutus.css' %}">
-    <link rel='stylesheet' type="image/jpg" media="screen" href="{% static 'images/' %}">
-    <!-- <link rel="shortcut icon" href=""> -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Us</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <meta name="theme-color" content="#563d7c">
-    <!--icon library-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% extends "home/base.html" %}
+{% block title %} About {% endblock %}
+{% load static %}
 
 
-    
-    <!-- <link rel="stylesheet" href="aboutus.css"> -->
-</head>
-<body>
+{%block head %}
+<link rel='stylesheet' href="{% static 'blog/css/aboutus.css' %}">
+{% endblock %}
+
+
+{% block content %}
   <style>
      #id1{
-       /* background-color: #98d4d4; */
-       background-color: #d0e5e5;
+       background-color: #a7cece;
+       
      }
      #id3{
       background-color: #92cece;
@@ -68,7 +57,7 @@
               <div class="col mb-4" >
                 <div class="card">
                    
-                  <img src="{% static 'images/m1.jpg' %}" class="card-img-top" alt="..."/>
+                  <img src="{% static 'blog/images/m1.jpg' %}" class="card-img-top" alt="..."/>
                   <div class="card-body" id="id1">
                     <h4 class="card-title">Who We Are</h4>
                     <p class="card-text">we are 4 students in ITI (Ahmed, Mohamed ,Hamed,Aya),<br>We all do not have the same scientific background <br>
@@ -83,7 +72,7 @@
               </div>
               <div class="col mb-4">
                 <div class="card">
-                  <img src="/static/images/m2.jpg" class="card-img-top" alt="...">
+                  <img src="{% static 'blog/images/m2.jpg' %}" class="card-img-top" alt="...">
                   <div class="card-body" id="id1">
                     <h4 class="card-title">What We Do</h4>
                     <p class="card-text"> this is our graduation project from ITI.<br>There are many variations of passages of this project will be available but in short time ago .<br>
@@ -184,5 +173,4 @@
    
   
 
-</body>
-</html>
+{% endblock %}

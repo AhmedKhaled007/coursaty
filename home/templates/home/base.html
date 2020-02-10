@@ -50,7 +50,7 @@
                 <a class="nav-link" href="{%url 'calendar' %}">My Calendar </a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'studentreg' %}">Welcome, {{ user.username }}.</a>
+              <div class="nav-link" >Welcome, {{ user.username }}.</div >
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout' %}">Logout.</a>

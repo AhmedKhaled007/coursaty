@@ -1,0 +1,31 @@
+{% extends "home/base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+<h2 style="text-align: center;">{{course.course_name}}</h2>
+
+<div class="row">
+
+{% for group in course_groups %}
+
+<div class="col-lg-4 mb-4">
+  <div class="card " style="width: 18rem;">
+    <div class="card-text">  <p>Instructor : {{ group.class_Instructor }}</p>
+    <p>Start Date : {{ group.strat_date }}</p>
+    <p>End Date : {{ group.end_date }}</p>
+    <p>Session Count : {{group.session_count}}</p>
+    <p>Course Days : {% for day in group.days.all %}{{day}}{% endfor %}</p></div>
+
+ <a href="{% url 'enroll' group.id %}">Eenroll</a>
+      </div>
+  </div>
+
+  {% endfor %}
+</div>
+</div>
+
+    <!-- <img src="{% static photo %}" alt="My image"><br> -->
+
+  {% endblock%}

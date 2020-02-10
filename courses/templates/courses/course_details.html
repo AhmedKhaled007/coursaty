@@ -1,0 +1,33 @@
+{% extends "home/base.html" %}
+{% block title %} {{course.course_name}} {% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+    <h1>{{course.course_name}}</h1>
+    <div class="row  d-flex justify-content-center p-2">{% if course.course_cover %}<img
+            src="{{course.course_cover.url}}" width=300px , hight=300px ,alt="My image"></div> {% endif%}
+    <div class="row ">
+        <div class=" col-sm-12 col-md-3 d-flex justify-content-center text-color='light' p-5"> Course Summary </div>
+        <div class=" col-sm-12 col-md-9 d-flex justify-content-center p-2"> Some quick example text to build on the card
+            title and make up the bulk of the card's content.</br>
+            Some quick example text to build on the card title and make up the bulk of the card's content.</br>
+            Some quick example text to build on the card title and make up the bulk of the card's content.</br>
+            Some quick example text to build on the card title and make up the bulk of the card's content.</br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-sm-12 col-md-3 d-flex justify-content-center text-color='light'">Course Price:</div>
+        <div class=" col-sm-12 col-md-9 d-flex justify-content-center"> {{course.course_price}}</span><br><br><br></div>
+    </div>
+
+    <div class="row">
+        <div class=" col-sm-12 col-md-3 d-flex justify-content-center text-color='light' p-3">Course Hours :</div>
+        <div class=" col-sm-12 col-md-9 d-flex justify-content-center p-3">
+            <div class="row"> <a href="#">{{course.course_hourse}}</a></div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

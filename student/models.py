@@ -11,7 +11,7 @@ class Student(models.Model):
     address = models.TextField()
     username = models.OneToOneField(User , on_delete=models.CASCADE)
     def __str__(self):
-        return self.mobile_phone
+        return self.username.first_name
 
 
 

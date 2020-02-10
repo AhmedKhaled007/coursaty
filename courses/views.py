@@ -16,10 +16,13 @@ def course_class(request,course_id):
     course = get_object_or_404(Course, pk = course_id) 
     course_groups = course.classgroup_set.all()
     context = {"course_groups" : course_groups , "course" : course}
-    return render(request,'courses/details.html', context)
+    return render(request,'courses/classes.html', context)
 
 def course_details(request,course_id):
-    pass
+    course = get_object_or_404(Course, pk = course_id) 
+    context = { "course" : course}
+    return render(request,'courses/course_details.html', context)
+    
 
 def enrollment(request,group_id):
     if request.user.is_authenticated:

@@ -10,6 +10,7 @@ class Course(models.Model):
     course_name = models.CharField(max_length=200)
     course_hours = models.IntegerField()
     course_price = models.IntegerField(default=0)
+    course_cover = models.ImageField(upload_to = 'profile' , blank=True)
     def __str__(self):
         return self.course_name
 
@@ -64,7 +65,7 @@ class Enrollment(models.Model):
     course_enroll = models.ForeignKey(ClassGroup, on_delete= models.PROTECT)
     date_enroll = models.DateField(auto_now_add=True)
     def __str__(self):
-        return f"enrollment id : {self.id} "
+        return f"enrollment id : {self.student_enroll.username.username} {self.course_enroll.course} "
 
 
 class Track(models.Model):
