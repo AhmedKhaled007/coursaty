@@ -2,7 +2,17 @@
 
 {% extends "home/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
+
+{% block head%}
+<link rel="stylesheet" href="{% static 'home/style/login.css' %}">
+
+{% endblock %}
+
 {% block content %}
+<!-- <div style="height: 700px;"></div> -->
+<div class="loginbox">
+
    <div class="content-section">
        <form method="POST">
            {% csrf_token%}
@@ -14,6 +24,22 @@
             </div>
            </fieldset>
            
+
+        </div>
+
+
+        <!-- <img src="images/avatar.png" class="avatar">-->
+        <!-- <h1>Login Here</h1>
+        <form>
+            <p>Username</p>
+            <input type="text" id="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" id="password" placeholder="Enter Password">
+            <input type="button" id="log" value="Login">
+            <a href="signup.html">Don't have an account?</a>
+        </form> -->
+
+
        </form>
        <div class="border-top pt-3">
            <small class="text-muted">

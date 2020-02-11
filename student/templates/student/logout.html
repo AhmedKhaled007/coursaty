@@ -3,14 +3,17 @@
 {% extends "home/base.html" %}
 
 {% block content%}
-  
-       <h2>you have been logged out</h2>
+  <div style="height: 400px; background-color: aliceblue    ;">
+       <h2 style="text-align: center;">you have been logged out</h2>
        <div class="border-top pt-3">
+           <div>
+               <div style="text-align: center;">
            <small class="text-muted">
-                <a  href="{% url 'studentreg' %}">Log In Again</a>
+                <a  href="{% url 'login' %}">Log In Again</a>
            </small>
-       </div>
- 
+        </div>
+       </div></div>
+    </div>
  
 
 

@@ -3,22 +3,26 @@
 {% block content %}
 {% load static %}
 
-<div class="container">
-<div class="row">
-  {% for course in courses %}
-  <div class="col-lg-4 mb-4">
-      <div class="card " style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">{{course.course.course_name}}</h5>    
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="{% url 'course_details' course.course.id %}">{{ course.course.course_name }}</a>
-            </div>
+
+<div class="container" style="background-color: white;box-shadow:10px 10px 10Xpx rgba(10, 10, 10, .01);">
+  <div class="row" style="margin:1% 1%; padding:3% 2%">
+    {% for course in courses %}
+    <div class="col-lg-4 mb-4">
+      <div class="card " style="width: 18rem;border-radius: 25px;">
+        <div class="card-body">
+          <h5 class="card-title"><a
+              href="{% url 'course_details' course.course.id %}">{{ course.course.course_name }}</a></h5>
+          <p class="card-text">Some quick example text to build on the card</p>
+          <p> Instructor : {{course.class_Instructor}}</p>
+          <p> Start Date  : {{course.start_date }}</p>
+
+        </div>
       </div>
 
+    </div>
+
+    {% endfor %}
+  </div>
 </div>
 
-  {% endfor %}
-</div>
-</div>
-
-  {% endblock%}
+{% endblock%}

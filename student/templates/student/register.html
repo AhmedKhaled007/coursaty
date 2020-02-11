@@ -1,29 +1,106 @@
-
 {% extends "home/base.html" %}
 {% load crispy_forms_tags%}
 {% block content %}
-   <div class="content-section">
-       <form method="POST" action="{% url 'studentreg' %}">
-           {% csrf_token%}
-           <fieldset class="form-group">
-               <legend class="border-bottom mb-4">join Today</legend>
-               {{ user_form.as_p }}
-               {{ student_form.as_p }}
-               <div class="form-group">
-                <button class="btn btn-outline-info" type="submit" >Sign Up</button>
-            </div>
-           </fieldset>
-           
-       </form>
-       <div class="border-top pt-3">
-           <small class="text-muted">
-               Aready have Account? <a class="ml-2" href="{% url 'login' %}">Sign in</a>
-           </small>
-       </div>
-   </div>
- 
+<style>
+    .Reg {
+        background-color: #e1e5e5;
+
+        /* text-align: center; */
+    }
+
+    .lab {
+        display: inline;
+    }
+
+    .inp {
+        display: inline-block;
+        margin-left: 50px;
+    }
+
+    .inp input {
+        width: 200px;
+    }
+
+    label {
+        margin-left: 20px;
+        width: 150px;
+        font-size: 13pt;
+        font-weight: 500;
+    }
+    legend{
+        font-weight: 800;
+        font-size: 25pt;
+    }
+
+    fieldset > div {
+        margin: 1.5% auto;
+    }
+    /* .form-group {
+        text-align: right;
+    } */
+</style>
+<div class="Reg container" style="margin: 1% auto;padding: 3% 4%;">
+    <div class="content-section">
+        <form method="POST" action="{% url 'studentreg' %}">
+            {% csrf_token%}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">join Today</legend>
+                <div>
+                    <label>Username :</label>
+                    <div class="inp"> {{ user_form.username   }}</div>
+                </div>
+                <div>
+
+                    <label>Password :</label>
+                    <div class="inp"> {{ user_form.password }}</div>
+                </div>
+
+                <div>
+                    <label>First Name :</label>
+                    <div class="inp"> {{ user_form.first_name  }}
+                    </div>
+                </div>
+
+                <div>
+                    <label>Last Name :</label>
+                    <div class="inp"> {{ user_form.last_name }}
+                    </div>
+                </div>
+                <div>
+                    <label>Email :</label>
+                    <div class="inp"> {{ user_form.email }}
+                    </div>
+                </div>
+                <div>
+                    <label>Birthday :</label>
+                    <div class="inp"> {{ student_form.birthday }}
+                    </div>
+                </div>
+                <div>
+                    <label>Mobile Number :</label>
+                    <div class="inp"> {{ student_form.mobile_phone }}
+                    </div>
+                </div>
+                <div>
+                    <label style="top: -40px;position: relative;">Address :</label>
+                    <div class="inp"> {{ student_form.address }}
+                    </div>
+                </div>
+                <div     style="text-align: right;">
+                    <button class="btn btn-outline-info" style="margin-right: 15%;" type="submit">Sign Up</button>
+                </div>
+            </fieldset>
+
+        </form>
+        <div class="border-top" style="text-align: right;">
+            <small class="text-muted" style="margin-right: 15%;" >
+                Aready have Account? <a class="ml-2" href="{% url 'login' %}">Sign in</a>
+            </small>
+        </div>
+    </div>
 
 
+</div>
 
 
 {% endblock %}

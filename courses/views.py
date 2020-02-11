@@ -29,6 +29,7 @@ def enrollment(request,group_id):
         student = request.user.student
         group = ClassGroup.objects.get(pk=group_id)
         group.students.add(student)
+        messages.success(request,'Congaration You Successfully Enrollment in course')
         return redirect('studentcourses')
     else:
         messages.error(request, 'You need to login First.')

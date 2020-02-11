@@ -14,6 +14,17 @@
         width: 100%;
         height: 500px;
     }
+      
+      .contact-form-area{
+        background-color: #e0e3e3;
+      }
+      #ids{
+          margin-left: 10px;
+      }
+      body{
+        background-color: #e9ebeb;
+      }
+    
 </style>
 
 
@@ -33,8 +44,11 @@
                         <p>Please call or email contact form and we will be happy to assist you.</p>
                         <form class="contact-from" method="post">
                             {% csrf_token %}
-                            <div class="form-group text-light">
-                                {{ form.as_ul }}
+                            <div class="form-group ">
+                               <div id="ids"> Name <br>  {{ form.name }}</div>
+                               <div id="ids"> from_email <br>  {{ form.from_email }}</div>
+                               <div id="ids"> Subject  <br> {{ form.subject }}</div>
+                               <div id="ids"> message  <br> {{ form.message }}</div>
 
                             </div>
 

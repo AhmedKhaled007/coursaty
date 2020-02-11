@@ -1,0 +1,17 @@
+.single_post{
+    width: 100%;
+}
+
+.comments-container{
+    background-color: azure;
+    padding: 10px;
+    margin: 0 10px;
+    border: 1px  solid blanchedalmond;
+    border-radius: 15px;
+}
+.comment-main-level{
+border-radius: 15px;
+    border: 2px solid beige ;
+    padding: 15px;
+    margin: 7px;
+}

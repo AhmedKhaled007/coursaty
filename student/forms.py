@@ -10,8 +10,15 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username','password','first_name', 'last_name', 'email')
+        
 
 class StudentForm(forms.ModelForm):
+    # address = forms.CharField(widget=forms.Textarea(attrs={'rows': 10, 'cols': 10}))
+
     class Meta:
         model = Student
         fields = ('birthday', 'address', 'mobile_phone')
+        widgets = {
+        'address': forms.Textarea(attrs={'rows':4, 'cols':35}),
+        'birthday' : forms.DateInput(attrs={'type': 'date'})
+        }

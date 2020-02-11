@@ -1,0 +1,40 @@
+
+
+{% extends "home/base.html" %}
+{% block title %} Blog {% endblock %}
+{% load static %}
+
+
+{%block head %}
+<link rel="stylesheet" href=" {% static 'blog-static/css/allposts.css' %}">
+
+{% endblock %}
+
+
+
+
+{% block content%}
+        <div class="container">
+        
+
+            <div class="row mt-4">
+            {% for post in all_posts %}
+                <div class="col-md-4">
+                    <div class="card" >
+                    {% if post.img %}
+                    <img src="{{post.img.url}}" class="card-img-top" alt="...">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.title}}</h5>
+                        <p class="card-text">{{post.content|truncatewords:20}}</p>
+                        <a href="{% url 'post' post.id%}" class="btn btn-primary">Know more</a>
+                    </div>
+                    </div>
+                </div>
+           {% endfor %}
+            </div>
+        </div>
+           {% endblock %}
+
+        
+       

@@ -12,7 +12,7 @@ class Instructor(models.Model):
     summary = models.TextField()
 
     def __str__(self):
-        return self.first_name + self.last_name
+        return f"{self.first_name} {self.last_name}"
     def age(self):
         return date.today() - self.date_of_birth
 

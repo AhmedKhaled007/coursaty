@@ -28,7 +28,7 @@ def studentReg(request):
             student_form = StudentForm()
         return render(request,'student/register.html', {'user_form' : user_form, 'student_form' :student_form })
     else:
-        messages.error(request, 'you already logged !!!, are you drunk?')
+        messages.error(request, 'you already logged !!!')
         return redirect('/')
 
 def mycourses(request):

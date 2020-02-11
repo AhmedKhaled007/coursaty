@@ -72,6 +72,9 @@ class Track(models.Model):
     courses = models.ManyToManyField(Course)
     name = models.CharField(max_length=200)
     price = models.IntegerField()
+    track_cover = models.ImageField(upload_to = 'profile' , blank=True)
+
+
     def __str__(self):
         return self.name
 

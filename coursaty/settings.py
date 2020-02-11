@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'cal.apps.CalConfig',
+    'Post.apps.PostConfig',
     'student.apps.StudentConfig',
     'home.apps.HomeConfig',
     'crispy_forms',
